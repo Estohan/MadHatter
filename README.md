@@ -17,9 +17,9 @@ ciphertext](https://eprint.iacr.org/2020/301.pdf).
 
 *  Run *"python madhatter.py -h"* in order to display the description below.
 
-*python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]\
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[-i "input_file"][-o "output_file"]\
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;["plaintext1" "plaintext2" | "ciphertext1"]*\
+&emsp;&emsp;*python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[-i "input_file"][-o "output_file"]\
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;["plaintext1" "plaintext2" | "ciphertext1"]*\
 \
 	Options:\
 		*-e*&emsp;Encrypts two plaintexts. The plaintexts will be provided either as operands to this command or inside an input file, separated by a blank line.\
@@ -38,7 +38,8 @@ ciphertext](https://eprint.iacr.org/2020/301.pdf).
 
 ###### Examples
 
-* *python madhatter.py -e -i "input.txt" -s "cool1" -o "output.txt"*
+* Encryption using the "cool1" predefined set of symbols:\
+&emsp;*> python madhatter.py -e -i "input.txt" -s "cool1" -o "output.txt"*
 \
 **input.txt:**
 <pre>As for the Hobbits of the Shire, with whom these tales are concerned,
@@ -106,3 +107,72 @@ that he had put it back in his pocket.</pre>
 ╗╚═╦╗╚╬╦╗╠═╦║╚═╩╗╚╬╦║╚╬╦╣╠╬╦╣╠═╦║╠╬╦╣╠═╦╗╚╬╦╗╚╬╩║╠╬╦╗╠╬╩╣╚═╩║╚═╩║╚═╦╣╚═╩╗╚╬╩╣╚═╩
 ╣╠═╦║╠╬╩╗╚═╩╗╚═╦║╚╬╩╣╠═╦╗╚═╦╗╠╬╩╗╚═╦║╠╬╩║╠═╦╣╠╬╦╣╠═╦╣╠═╦╣╠═╩║╠╬╩╗╚═╦╗╚╬╦╗╠═╦╣╠═╦
 ╗╚═╦╗╚═╩╣╠═╦╣╠╬╦╣╠═╩║╠╬╩╗╚═╦║╚═╦║╚═╦╣╠═╦║╚╬╦╗╚╬╩╣╠═╦╗╠═╦╣╠╬╩╣╠╬╩</pre>
+
+
+* Decryption of the cyphertext obtained above:\
+&emsp;*> python madhatter.py -d -i "input.txt" -s "cool1" -o "output.txt"*
+\
+**input.txt:**
+<pre>═╗╚╦╠║╬╦╠═║╦╬╚╣╦╠╬╣╦╬╚╗╩╚╣═╩═╣╦╠╣╩╚═╣╬╦╚╦═╣╚═╣╦╚╚║═╩╩╚╬╗╠╬╦║╦╬╚╣╠═║╦╗╬╚╩╣═╩╚╠═╣╦
+╬║╠╦╩═╣╚╩╚═║╠╣╦╬╠╦═╣╠╬╗╩═╚╩║╩╚╗╬═╣╩╚╗╬╩╠═╩╚╣╦╬╚╣═╩╠║╩╚╬╗╚═╩╣═╦╠╣╠╬╦║═╠╣╦╩╗╬╚╚═╗╦
+╠═╣╩╦╠╣═╬║╦╠═╚╗╦╬╦╠╣╣═╦╠╦╚═║╣╬╦╚╦╚╬╗║═╦╚╠═╦╣╠╬╣╦╗╦╚╬═╦╠╣╠╦═╗╚╩═║╬╗╦╚╬╩╚╗╚╣═╩═╣╦╠
+═╠╗╦╚╦═╗╩║╬╠╬╦╠║╦╚╬╣╠═╦║╬╩╚╗╚═╩╣═╠╣╦╚║╩═╦╣╠╬╚╬║╦╠═╣╦╗═╦╚╦═║╚╣╦╠═╦╚═╗╗╬╦╚╦═╗╠╚╬║╦
+╣╬╠╦╣╬╦╚╦║╠╬╬╦╚║╠╣═╦╦╠╣╬╚═║╩╚╗╬╩╬╠║╩╬╗╩╚╣╩═╚╦╠═╣╬╠╩║╬╗╩╠╣═╦╠╦╬╣╠═╦╠╣╗═╦╚╩═║╠═╣╦╠
+╬╠╦╣╠╬╣╦║╬╠╩╦║═╠╬╚╣╦╠╣╩══╗╩╠╬╗╩╚╣═╩╚╦═╣╠╬║╩╠╦═╠╗╠╬╣╦╦╣═╠╬╠║╦╦║╬╠╠═╣╦╠═╗╦╩╚║═╬╗╦╚
+═╚╣╦╣╦╬╠═║╩╚╚╗═╩╣╚╩═╬╗╚╩═╦╚║╦╚╬╣╠╣═╩╬╦╚╣╚╬╩╣╬╠╣╦╠╦╬║╣═╚╦╠╣═╦═║╩╚╬╦╚╗╚═╩╗╬╚╗╦╬╣╚╦
+╚╗╬╩╚═╗╦═╚╣╦╠═╣╩║╬╩╠╦═║╠╚╬╣╦╗╬╚╦╦═╠╗╦╬╣╚║═╦╠╩╬║╠╠═╣╦╣╩╠═╠╣═╩╦╚╬╣╬╠╩╗╦═╗╚╬╦╚╗╠═╦╗
+═╚╗╩╬╦╣╠═╣╦╠═╦╠╣╗╬╚╦╣═╦╚╩╚╬╣╬╗╚╩╗╬╚╩╩╣═╚╣╦╠═╬╩╠║╠║╦╬╦╠═╣╣═╩╠╠╗╦═╬╚╦╣╠═║╩╩╗╬╠╚╬╣╦
+╣╬╠╦╠╣═╦╦╬║╠╚═╣╩╣╦╚╬╠╦═╣╬║╦╠╠║╬╦═║╚╩╬╗╦╚═╚╦║╣═╦╠╗╩╚╬═╩╚╣╠╣╦═╩╚═║╣╬╦╠╠║╦═╠╣═╦╠═╣╦
+╗╬╚╩╚═╩╣═╚╗╦╠═╦╗╬╗╩╚╚╣╦╬╚╣╩╬╩╚═╗╣═╩╚╣╩╠══╦╠╣╚╗╦═╬╩╚╗╚═╩╣═╦╠╣╬╠╣╦╩║╠╬╦╠╬║╚╣╬╦═╩╠╣
+═╦╣╠╦║╬╠═╗╦╚╗╬╦╚╦═╗╠╩╠╬╗╠═╦╣╦╬╠╣═╦╠╣╚═╦║═╠╣╩═╦╚╗╦╗═╠║═╩╚╚╬╗╦╦═╚╗╬╗╩╚╣═╩╚╩═║╚═║╦╚
+╠╗═╩╚╦═║╚╣╬╩╬╣╦╠═╠╩╣╩╚═║╚╬╗╦╗═╚╩╚╣╩═╗╦╚═╩═║╚╬╣╦╠╠═╩║╩╬╣╚═║╦╚╣═╩╚╠═╣╩╚═║╩╩╠╗═╦╠═╣
+╗╬╩╚╚═╣╩╣═╠╦╣═╩╚╦═╗╚═║╩╚╦╬╣╠╬╦╚╣═╠║╦╩╚╬╗╚═╩╣╣═╦╠═║╩╚╠╬╦╣═╚╣╩═╣╦╠═╚╗╦╗═╦╠╠╬║╦╬╗╠╩
+╩╣═╚╩╚═║╚═╦║╩═╚╣╩╠╬╗╗═╦╚╬║╠╦╚║═╦╚╬╣╦╩║╠═╩═║╠╦╚╬╣╦╗╚╬╩╠═╣╠╬╩║╣═╦╚╠╬╣╦╣╬╦╚╩╬╗╠╬╗╦╚
+╗╩╬╚═╣╩╚╚╣╬╩║╠╦╬╩╬╗╚╚═╣╩╣═╦╠╣╬╦╚╬╗╦╚╠╣╩═║╬╩╠╚╦═║╬╦╠╣╚╗═╦║═╦╠╚╬╗╩═╣╠╩║═╩╚╩╬╗╚╬╗╩╚
+═╣╠╩╦╠═╣╚║╬╦╬╣╦╠═╦╗╚║═╚╦╗╬╩╚╩═║╚╬║╦╠═╣╠╦╠═╗╦╗═╚╦╠═╩║╬╚╣╦╚╬╦╗╚═╗╩╗╩╚╬╣═╩╚╦═╣╠═╩╠║
+╗╬╩╠╦═╗╚╬║╦╠╬╠╦║╚═╣╩╣╬╚╦╦╣═╠═╠║╩╚═╦╗╠═╗╩║═╩╚╬╚╗╦╚═╗╩╚╣╦═╚╬╣╩╚╬╩╗╚╬╗╩╣═╩╚╣╦╠═╩╠╬║
+╣═╩╚╦═╗╚╠═╗╦╣═╠╩╣╬╦╚╬╦╚╗╩═╚╗╚╗═╦╬╗╦╚═╦╠╗║╬╦╠╠╗╩═║═╩╚╠╣═╩╣═╠╩╦═╠║╩╬╚╣╩╣═╠═║╦╠╩═║╚
+╬╗╦╚╗╩╚══╣╦╠╦╠╬╣╦╬╠║╦═╗╚╬╗╦╚═╠╗╦║═╦╚╦╬╣╚╬╣╩╚╠╣═╩╦╠═╗╠═╩║╦═╚╗╩╠═╗╠═╦╣╩═║╠╦╚═╗╚╗╦╬
+╩╬║╠╬╦╚╣╚╬╩╗═╚╣╩╦═╣╠╬╣╦╠╚╣╩╬╦╠╬║╣═╦╠═╦╠║╣╬╩╚╩╠═╣╚═╦╗╦╬╚╗═╦╠╗╚═╦║╬╚╣╦═║╠╩╠═╣╦╠╣═╩
+╬╠╩║╩╚╬╗╚═╩╣╩═╚║╦╬╗╚╩╚═╗╦║╠╬╚╗╩╬═╣╩╚╦╣═╠═║╚╩╣╬╦╠╠═║╦╚╗═╦═║╦╚╦╣╠═╬║╦╠╩╗╠╬═╦╣╠╬╣╦╠
+╠╣═╦═╦╚╗╦║╬╠╦╗═╚╣╬╦╠╩╬╣╚═╩╠╣╣═╦╠╩═╚╗╬╦╚╣╚╬╦╣═╠╗╦╬╦╚╗╦╗═╚╬╗╚╩╩╬╣╚╬╦╠╣═╠╣╦╗═╦╠╠╬╣╦
+╦╗═╚╬╚╗╩╩═╣╚╦╠═╣╦╣╠╬╬╩╚╗╚═╩╣═╚╗╦╗╬╦╚╦═╣╚═╣╦╠╚═╦╗╣╩╚╬╩╚╬╗║═╩╚╦═║╠╬╩╚╣╠═╩╣═╣╦╚╬╣╠╦
+╬╣╚╦╚═╗╦╠╗═╦╣═╦╚╠╬╣╦═║╚╩╗╩╚═╩╚═╣╩╗╬╚╦╣═╠╩╬║╠═╣╦╠╦╗╠═╬╦╠╣═╠╣╦═╗╦╠═╦╚║╩╣╚═╠═╣╦╣╦═╠
+═╗╩╠╦╣╠══╗╦╠╠╬╩╗║═╩╚╬╩╚╗╚╣╩═╩╠═║╬╣╚╦╣╬╩╚╚╬╗╩═╚╩╣╬╦╠║╚╗╦═║╬╦╚╩╚╬╗╗╬╩╚╬╦╚╣╣╩╠══╦╚╗
+╣╚╩╬═╩╗╚╣═╚╩╗╬╩╚╦═╣╠╬╣╦╠═╗╚╦╚╬╗╦╗═╠╦╚╬╩╗╬╚╣╦╣═╦╠╦═╗╚╬╩╚╗║═╩╚╦╬╗╚═╗╩╚╦═╗╚╬╦╚╗═╠╗╦
+╠╦═╗╣╬╠╦║═╩╚╦╚╬╗╗═╩╠═╩║╚╬╦╚╗═╚╩╗╦╚╗═╦╚╬╗╠═╦╗╩═╣╠╦╚═╗╚╣╩╬╚╩═╗╚═╣╩╬╚╩╗╩╚╣══╣╦╠║╬╩╠
+╗╠═╦║╚═╩╗╠═╦╗╚═╦╗╚╬╦╗╠═╦╣╠═╦╗╚═╦╗╚╬╩╗╚═╦╗╚╬╦╗╠═╦╗╠═╦╣╠╬╦║╚═╩╗╚╬╦╗╠═╩╣╚╬╦║╠═╦╗╚╬╩
+╣╠═╦╗╚╬╦╗╚═╦╗╚╬╦╗╠═╦╣╚═╩╣╠═╦╗╚═╦╣╠╬╦╗╚╬╩║╚═╩╣╠═╩║╠╬╩╣╚═╦╣╠═╦║╚═╩╗╚╬╦╗╚═╩║╠═╦╣╚╬╦
+╗╚╬╦╗╠═╦╣╚╬╦║╠═╦║╠╬╦║╚═╩║╠═╩║╚╬╦╣╠═╩╣╠═╦╣╠═╦║╠╬╦╗╚╬╩║╠╬╦╗╚═╦╗╚╬╩╗╚═╦╣╠═╩╣╠═╩╗╚╬╩
+║╚═╩║╠═╩╣╠═╦║╠╬╦╗╚═╦╗╚╬╦╗╠═╦╣╚╬╦║╠═╦║╠╬╦║╚═╩╣╠╬╩║╠═╩╣╠═╦╗╚═╦╣╠═╩║╠╬╦╗╚═╦╗╠═╦╗╚═╦
+║╠╬╩╗╠╬╩╣╚═╩╣╠═╦╗╚╬╦╗╚╬╩╣╚═╩╣╠═╦║╠╬╩║╚═╦╣╚╬╦╣╚╬╩╣╠═╩╗╠═╦╗╚═╩╣╠═╦╗╚╬╩╗╚╬╩╣╚═╩╣╠═╦
+║╠═╩╗╚╬╩╣╚═╩╣╠═╦║╠╬╩╗╠╬╩╣╠═╦╣╠╬╦╣╠═╦╣╚═╩╣╚╬╦║╠╬╦║╚╬╦║╚═╩╗╚╬╩╗╚═╦╣╚═╦╣╠═╩╣╠═╦╗╚═╦
+╗╚╬╦╗╠═╦╗╠═╦╣╠═╦╣╠═╩║╚═╩╗╚═╩╣╚═╩╗╚╬╩╣╠═╦╗╠═╦║╚═╩╗╚╬╦║╚╬╦╗╚═╦╣╠╬╦╗╚╬╩║╚═╩╣╠═╦║╠╬╦
+╗╚═╦╗╚╬╦╗╠═╦║╚═╩╗╚╬╦║╚╬╦╣╠╬╦╣╠═╦║╠╬╦╣╠═╦╗╚╬╦╗╚╬╩║╠╬╦╗╠╬╩╣╚═╩║╚═╩║╚═╦╣╚═╩╗╚╬╩╣╚═╩
+╣╠═╦║╠╬╩╗╚═╩╗╚═╦║╚╬╩╣╠═╦╗╚═╦╗╠╬╩╗╚═╦║╠╬╩║╠═╦╣╠╬╦╣╠═╦╣╠═╦╣╠═╩║╠╬╩╗╚═╦╗╚╬╦╗╠═╦╣╠═╦
+╗╚═╦╗╚═╩╣╠═╦╣╠╬╦╣╠═╩║╠╬╩╗╚═╦║╚═╦║╚═╦╣╠═╦║╚╬╦╗╚╬╩╣╠═╦╗╠═╦╣╠╬╩╣╠╬╩</pre>
+\
+**output.txt:**
+<pre>First text:
+asforthehobbitsoftheshirewithwhomthesetalesareconcernedinthedaysoftheirpeaceandp
+rosperitytheywereamerryfolktheydressedinbrightcoloursbeingnotablyfondofyellowand
+greenbuttheyseldomworeshoessincetheirfeethadtoughleatherysolesandwerecladinathic
+kcurlinghairmuchlikethehairoftheirheadswhichwascommonlybrownthustheonlycraftlitt
+lepractisedamongthemwasshoemakingbuttheyhadlongandskillfulfingersandcouldmakeman
+yotherusefulandcomelythingstheirfaceswereasarulegoodnaturedratherthanbeautifulbr
+oadbrighteyedredcheekedwithmouthsapttolaughterandtoeatinganddrinkingandlaughthey
+didandeatanddrinkoftenandheartilybeingfondofsimpleestsatalltimesandofsixmealsada
+ywhentheycouldgetthemtheywerehospitableanddelightedinpartiesandinpresentswhichth
+eygaveawayfreelyandeagerlyacceptedxx
+
+Second text:
+frododrewtheringoutofhispocketagainandlookedatititnowappearedplainandsmoothwitho
+utmarkordevicethathecouldseethegoldlookedveryfairandpureandfrodothoughthowrichan
+dbeautifulwasitscolourhowperfectwasitsroundnessitwasanadmirablethingandaltogethe
+rpreciouswhenhetookitouthehadintendedtoflingitfromhimintotheveryhottestpartofthe
+firebuthefoundnowthathecouldnotdosonotwithoutagreatstruggleheweighedtheringinhis
+handhesitatingandforcinghimselftorememberallthatgandalfhadtoldhimandthenwithanef
+fortofwillhemadeamovementasiftocastitawaybuthefoundthathehadputitbackinhispocket
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</pre>
