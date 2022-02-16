@@ -13,7 +13,9 @@ ciphertext](https://eprint.iacr.org/2020/301.pdf).
 
 ###### Usage
 
-*  *python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]\
+*  Run *python madhatter.py -h* in order to display the description below.
+
+python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]\
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[-i "input_file"][-o "output_file"]\
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;["plaintext1" "plaintext2" | "ciphertext1"]*
 
