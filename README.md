@@ -13,8 +13,8 @@ ciphertext](https://eprint.iacr.org/2020/301.pdf).
 
 ###### Usage
 
-*  *python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]
-&emsp&emsp&emsp[-i "input_file"][-o "output_file"]
+*  *python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]\
+&emsp&emsp&emsp[-i "input_file"][-o "output_file"]_
 &emsp&emsp&emsp["plaintext1" "plaintext2" | "ciphertext1"]*
 
 &emsp*Options:
