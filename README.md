@@ -14,13 +14,13 @@ ciphertext](https://eprint.iacr.org/2020/301.pdf).
 ###### Usage
 
 *  *python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]\
-&emsp &emsp &emsp[-i "input_file"][-o "output_file"]\
-&emsp &emsp &emsp["plaintext1" "plaintext2" | "ciphertext1"]*
+&emsp;&emsp;&emsp;[-i "input_file"][-o "output_file"]\
+&emsp;&emsp;&emsp;["plaintext1" "plaintext2" | "ciphertext1"]*
 
-&emsp *Options:
-&emsp&emsp-e&emspEncrypts two plaintexts. The plaintexts will be provided
-&emsp&emsp&emspeither as operands to this command or inside an input
-&emsp&emsp&emspfile, separated by a blank line.
+&emsp;*Options:
+&emsp;&emsp;-e&emsp;Encrypts two plaintexts. The plaintexts will be provided
+&emsp;&emsp;&emsp;either as operands to this command or inside an input
+&emsp;&emsp;&emsp;file, separated by a blank line.
 		-d		Decrypts one ciphertext. The ciphertext will be provided
 				either as an operand to this command or inside an input file.
 		-i		"-i filename". Read input text from "filename" file.
