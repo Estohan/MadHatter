@@ -14,10 +14,10 @@ ciphertext](https://eprint.iacr.org/2020/301.pdf).
 ###### Usage
 
 *  *python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]\
-&emsp&emsp&emsp[-i "input_file"][-o "output_file"]_
-&emsp&emsp&emsp["plaintext1" "plaintext2" | "ciphertext1"]*
+&emsp &emsp &emsp[-i "input_file"][-o "output_file"]\
+&emsp &emsp &emsp["plaintext1" "plaintext2" | "ciphertext1"]*
 
-&emsp*Options:
+&emsp *Options:
 &emsp&emsp-e&emspEncrypts two plaintexts. The plaintexts will be provided
 &emsp&emsp&emspeither as operands to this command or inside an input
 &emsp&emsp&emspfile, separated by a blank line.
