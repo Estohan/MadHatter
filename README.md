@@ -15,7 +15,7 @@ ciphertext](https://eprint.iacr.org/2020/301.pdf).
 
 ###### Usage
 
-*  Run *"python madhatter.py -h"* in order to display the description below.
+*  Run *"python madhatter.py -h"* in order to display the description below:
 
 &emsp;&emsp;*python madhatter.py [-e|-d|-h][-k "key"][-t "n"][-s "abcdefghi"]\
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[-i "input_file"][-o "output_file"]\
@@ -40,6 +40,7 @@ ciphertext](https://eprint.iacr.org/2020/301.pdf).
 
 * Encryption using the "cool1" predefined set of symbols:\
 &emsp;*> python madhatter.py -e -i "input.txt" -s "cool1" -o "output.txt"*
+\
 \
 **input.txt:**
 <pre>As for the Hobbits of the Shire, with whom these tales are concerned,
@@ -111,6 +112,7 @@ that he had put it back in his pocket.</pre>
 
 * Decryption of the cyphertext obtained above:\
 &emsp;*> python madhatter.py -d -i "input.txt" -s "cool1" -o "output.txt"*
+\
 \
 **input.txt:**
 <pre>═╗╚╦╠║╬╦╠═║╦╬╚╣╦╠╬╣╦╬╚╗╩╚╣═╩═╣╦╠╣╩╚═╣╬╦╚╦═╣╚═╣╦╚╚║═╩╩╚╬╗╠╬╦║╦╬╚╣╠═║╦╗╬╚╩╣═╩╚╠═╣╦
